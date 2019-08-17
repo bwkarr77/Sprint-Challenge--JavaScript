@@ -1,5 +1,5 @@
 // ==== Objects ====
-
+console.log(`----Objects Section----`);
 /* 
   Given the following information about dinosaurs, create 3 objects: 
   Use this pattern to create your objects: 
@@ -7,32 +7,38 @@
 */
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+let tyrannosaurus = {"name":"Tyrannosaurus","diet":"carnivorous", "weight": 7000, "length": 12, "period": "Late Cretaceous"};
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
+let stegosaurus = {"name":"Stegosaurus","diet": "herbivorous", "weight":2000, "length":9, "period": "Late Jurassic"};
 
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+let velociraptor = {"name":"Velociraptor","diet": "carnivorous", "weight": 15, "length": 1.8, "period": "Late Cretaceous"};
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(`${tyrannosaurus.name}'s weight: ${tyrannosaurus.weight}kg`);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(`${velociraptor.name}'s diet is: ${velociraptor.diet}`);
 
 // How long was a stegosaurus?
-console.log();
+console.log(`${stegosaurus.name}'s length is: ${stegosaurus.length} meters.`);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(`${tyrannosaurus.name}'s lived in the period: ${tyrannosaurus.period}`);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+tyrannosaurus.speak = function(){
+  return "RAWERSRARARWERSARARARRRR!";
+}
+console.log(`${tyrannosaurus.name} says "${tyrannosaurus.speak()}`);
 
 
 // ==== Arrays ====
-
+console.log(`\n---Arrays Section----`);
 // Given an array of college graduates.  Complete the following requests using any array method you like
 
 const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern State College","email":"ctorry0@macromedia.com"},
@@ -50,6 +56,10 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
+for(let i=0; i<graduates.length; i++){
+  universities.push(graduates[i].university);
+}
+universities.sort();
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -59,6 +69,9 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
+for(let i=0; i<graduates.length; i++){
+  contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`);
+}
 console.log(contactInfo);
 
 
